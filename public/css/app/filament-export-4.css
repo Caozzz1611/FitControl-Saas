@@ -1,0 +1,27 @@
+.preview-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.preview-table td,
+.preview-table th {
+    text-align: left;
+    font-size: 13px;
+    line-height: 2;
+    overflow: hidden;
+    padding-left: 6px;
+    word-break: normal;
+    padding: .125rem 0.5rem;
+}
+
+.preview-table th {
+    font-weight: normal;
+}
+
+.preview-table-wrapper {
+    max-height: min(400px, 80vh);
+    overflow-y: auto;
+}
+
+
