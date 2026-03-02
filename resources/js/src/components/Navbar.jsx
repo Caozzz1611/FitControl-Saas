@@ -29,7 +29,7 @@ function Navbar() {
           <a href="/admin/login">INICIAR SESION </a>
         </li>
         <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
-          <a href="#about">REGISTRARSE</a>
+          <a href="/solicitar-acceso">SOLICITAR ACCESO</a>
         </li>
         <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
           <a href="#work">WORK</a>

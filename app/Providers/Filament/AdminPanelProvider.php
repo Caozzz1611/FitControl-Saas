@@ -46,7 +46,7 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                  \App\Filament\Admin\Pages\Dashboard::class,
                  \App\Filament\Admin\Pages\Calendario::class,
-                 
+                 \App\Filament\Admin\Pages\TenantRequests::class,
 
                  
             ])

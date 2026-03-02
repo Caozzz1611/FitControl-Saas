@@ -13,7 +13,7 @@ return new class extends Migration {
             // Datos básicos SaaS
             $table->string('nombre'); // Nombre oficial
             $table->string('subdominio')->nullable()->unique();
-            $table->enum('estado', ['activo','suspendido'])->default('activo');
+            $table->enum('estado', ['activo','suspendido', 'pendiente'])->default('pendiente');
 
             // Identidad legal
             $table->string('nombre_corto')->nullable();
