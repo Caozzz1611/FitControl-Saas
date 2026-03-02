@@ -20,16 +20,23 @@ class EquipoUserForm
                 })
                 ->searchable(),
 
-                Forms\Components\Select::make('user_id')
-            ->label('Jugador')
-            ->required()
-            ->options(function () {
-                // Solo usuarios con el rol 'jugador' y del mismo tenant
-                return User::role('Jugador')
-                    ->where('tenant_id', auth()->user()->tenant_id) // opcional si quieres filtrar por tenant
-                    ->pluck('name', 'id');
-            })
-            ->searchable(),
+           Forms\Components\Select::make('user_id')
+    ->label('Jugador')
+    ->required()
+    ->options(function () {
+        $query = User::query()
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'Jugador');
+            });
+
+        // Filtrar por tenant solo si no eres super-admin
+        if (!auth()->user()->hasRole('super_admin')) {
+            $query->where('tenant_id', auth()->user()->tenant_id);
+        }
+
+        return $query->pluck('name', 'id');
+    })
+    ->searchable(),
 
             Forms\Components\DatePicker::make('fecha_inicio')
                 ->label('Fecha de Inicio')

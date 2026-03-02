@@ -19,31 +19,72 @@ class TenantsTable
     public static function configure(Table $table): Table
     {
         return $table
-            ->columns([
-                TextColumn::make('nombre')
-                    ->label('Nombre')
-                    ->searchable()
-                    ->sortable(),
+                        ->columns([
+                    TextColumn::make('nombre')
+                        ->label('Nombre Oficial')
+                        ->searchable()
+                        ->sortable(),
 
-                TextColumn::make('subdominio')
-                    ->label('Subdominio')
-                    ->searchable()
-                    ->sortable(),
+                    TextColumn::make('nombre_corto')
+                        ->label('Nombre Corto')
+                        ->searchable()
+                        ->toggleable(),
 
-                TextColumn::make('estado')
-                    ->label('Estado')
-                    ->sortable(),
+                    TextColumn::make('nit')
+                        ->label('NIT')
+                        ->searchable()
+                        ->sortable(),
 
-                TextColumn::make('created_at')
-                    ->label('Creado')
-                    ->dateTime()
-                    ->sortable(),
+                    TextColumn::make('tipo_club')
+                        ->label('Tipo')
+                        ->badge()
+                        ->colors([
+                            'primary' => 'formativo',
+                            'warning' => 'amateur',
+                            'success' => 'profesional',
+                        ])
+                        ->sortable(),
 
-                TextColumn::make('updated_at')
-                    ->label('Actualizado')
-                    ->dateTime()
-                    ->sortable(),
-            ])
+                    TextColumn::make('ciudad')
+                        ->label('Ciudad')
+                        ->searchable()
+                        ->toggleable(),
+
+                    TextColumn::make('pais')
+                        ->label('País')
+                        ->toggleable(),
+
+                    TextColumn::make('email_corporativo')
+                        ->label('Email')
+                        ->searchable()
+                        ->toggleable(),
+
+                    TextColumn::make('subdominio')
+                        ->label('Subdominio')
+                        ->searchable()
+                        ->sortable(),
+
+                    TextColumn::make('estado')
+                        ->label('Estado')
+                        ->badge()
+                        ->colors([
+                            'success' => 'activo',
+                            'danger' => 'suspendido',
+                        ])
+                        ->sortable(),
+
+                    TextColumn::make('created_at')
+                        ->label('Creado')
+                        ->dateTime('d/m/Y H:i')
+                        ->sortable()
+                        ->toggleable(isToggledHiddenByDefault: true),
+
+                    TextColumn::make('updated_at')
+                        ->label('Actualizado')
+                        ->dateTime('d/m/Y H:i')
+                        ->sortable()
+                        ->toggleable(isToggledHiddenByDefault: true),
+                ])
             ->filters([
                 SelectFilter::make('estado')
                     ->label('Estado')

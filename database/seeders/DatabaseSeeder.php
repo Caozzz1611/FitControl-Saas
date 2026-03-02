@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         //seeder de tenants
        $this->call([
         TenantSeeder::class,
+        RoleSeeder::class,
     ]);
         // Crear usuario administrador por defecto
         User::create([
