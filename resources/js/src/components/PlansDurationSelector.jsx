@@ -43,14 +43,14 @@ function PlansDurationSelector({
           currentPlanDuration={currentPlanDuration}
           handleCurrentPlanDurationUpdate={handleCurrentPlanDurationUpdate}
           className="border border-[#FF734F]"
-          text="SAVE 10%"
+          text="AHORRA 10%"
         />
         <PlansDurationSelectorButton
           duration="yearly"
           currentPlanDuration={currentPlanDuration}
           handleCurrentPlanDurationUpdate={handleCurrentPlanDurationUpdate}
           className="border border-[#FF734F] rounded-r-lg"
-          text="SAVE 15%"
+          text="AHORRA 15%"
         />
       </div>
     </div>

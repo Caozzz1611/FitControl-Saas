@@ -6,9 +6,10 @@ function Questions() {
   return (
     <div className="my-20 bg-[#F6F6F6] flex justify-center" id="faq">
       <div className="w-full max-w-[1440px] px-6 flex flex-col items-center justify-center gap-16">
+        
         <h3 className="mt-12 text-4xl font-bold capitalize text-center max-[768px]:text-3xl max-[768px]:mt-7">
-          Our most <span className="text-[#FF734F]">frequently</span> asked
-          questions
+          Preguntas <span className="text-[#FF734F]">frecuentes</span> sobre
+          FitControl
         </h3>
 
         <div className="w-[75%] flex flex-col gap-10 max-[1024px]:w-[100%]">
@@ -16,6 +17,7 @@ function Questions() {
             <Question key={index} question={faq.question} answer={faq.answer} />
           ))}
         </div>
+
       </div>
     </div>
   );

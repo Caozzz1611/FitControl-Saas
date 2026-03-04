@@ -1,27 +1,27 @@
 export const faqQuestions = [
   {
-    question: "Do I really get unlimited design services?",
+    question: "¿Qué es FitControl?",
     answer:
-      "Absolutely! With our subscription, you have unlimited access to our expert UI/UX designers for all your design needs.",
+      "FitControl es una plataforma de gestión de clubes deportivos que permite administrar jugadores, entrenadores, equipos, entrenamientos y pagos etc en un solo lugar.",
   },
   {
-    question: "What is a realistic turnaround time?",
+    question: "¿Puedo gestionar varios equipos?",
     answer:
-      "Our commitment is to provide you with a fresh design every week, ensuring a swift and efficient turnaround time.",
+      "Sí, puedes crear y administrar múltiples equipos y categorías según las necesidades de tu club.",
   },
   {
-    question: "I need my designs ASAP—can you help?",
+  question: "¿Es segura la información de mi club?",
+  answer:
+    "Sí, FitControl protege la información mediante autenticación segura y control de acceso por roles, garantizando que solo las personas autorizadas puedan acceder a los datos.",
+},
+  {
+    question: "¿Puedo probar la plataforma antes de pagar?",
     answer:
-      "Certainly! While our standard turnaround is weekly, we understand urgent needs. Contact our support, and we'll do our best to expedite your project.",
+      "Sí, ofrecemos una prueba gratuita para que puedas conocer todas las funcionalidades antes de suscribirte.",
   },
   {
-    question: "What types of projects do you work on?",
+    question: "¿Cómo se gestionan los pagos?",
     answer:
-      "We cover a wide range of projects, including website design, app interfaces, branding elements, and more. Our versatile designers are ready for any UI/UX challenge.",
-  },
-  {
-    question: "What if I want to cancel my service?",
-    answer:
-      "We make it hassle-free. You can cancel anytime, and there are no hidden fees. Your satisfaction is our priority.",
+      "Puedes registrar mensualidades, consultar pagos pendientes y generar reportes financieros fácilmente.",
   },
 ];

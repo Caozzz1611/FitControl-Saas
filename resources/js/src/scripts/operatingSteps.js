@@ -4,21 +4,21 @@ import operatinStep3 from "../assets/operatingStep3.svg";
 
 export const operatingSteps = [
   {
-    title: "Costs 70% less",
-    description:
-      "We developed highly-optimized design processes to let us work fast and deliver incredible results.",
-    src: operatinStep1,
-  },
-  {
-    title: "Adaptable and scalable",
-    description:
-      "High-velocity is crucial to a startup's success, and that's why we deliver new designs every week.",
-    src: operatinStep2,
-  },
-  {
-    title: "Fast turnaround times",
-    description:
-      "UXpert was built for flexibility—we quickly adapt and grow as you grow your startup.",
-    src: operatinStep3,
-  },
+  title: "Reduce costos administrativos",
+  description:
+    "Automatiza procesos como pagos, registro de jugadores y organización de equipos, ahorrando tiempo y reduciendo gastos operativos.",
+  src: operatinStep1,
+},
+{
+  title: "Adaptable y escalable",
+  description:
+    "FitControl se ajusta a clubes pequeños o grandes, permitiendo crecer sin perder el control de la gestión deportiva.",
+  src: operatinStep2,
+},
+{
+  title: "Gestión rápida y eficiente",
+  description:
+    "Organiza entrenamientos, partidos y eventos en segundos, manteniendo toda la información centralizada y actualizada.",
+  src: operatinStep3,
+},
 ];

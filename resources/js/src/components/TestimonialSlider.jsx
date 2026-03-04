@@ -20,10 +20,7 @@ function TestimonialSlider() {
         />
 
         <p className="max-w-[700px] text-white text-center font-bold text-3xl max-[900px]:text-2xl max-[900px]:max-w-[500px]  max-[768px]:text-xl  max-[450px]:text-lg">
-          UXpert helped identify the main pain points and designed a new UX that
-          is accessible and easy to understand. The redesign pushed us forward
-          on our mission to be able to verify 100% of IDs in real-time, and we
-          raised over $100M in funding.
+          FitControl nos ayudó a identificar los principales problemas en la administración de nuestro club y a implementar una gestión más organizada y fácil de usar. Gracias a la plataforma, optimizamos nuestros procesos internos y mejoramos el control de jugadores, pagos y entrenamientos.
         </p>
       </div>
 
@@ -32,9 +29,9 @@ function TestimonialSlider() {
 
         <div>
           <p className="text-[#FF734F] font-bold uppercase text-lg">
-            Erick Desoto
+            Berick Zambrano
           </p>
-          <p className="text-sm">VP of Product at Socure</p>
+          <p className="text-sm">Cliente de nuestro servicio</p>
         </div>
       </div>
 
@@ -42,7 +39,7 @@ function TestimonialSlider() {
         type="button"
         className="h-12 px-8 mt-2 text-white uppercase text-sm font-bold tracking-wider bg-[#F86642] rounded-lg flex items-center hover:bg-[#F6F6F6] hover:text-[#F86642] duration-150 border-2 border-[#F86642] hover:border-[#F86642] hover:bg-transparent active:scale-95 transition-all"
       >
-        see our case studies
+        Explora nuestros casos reales
       </button>
     </div>
   );

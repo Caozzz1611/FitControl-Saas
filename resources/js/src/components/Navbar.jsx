@@ -19,7 +19,7 @@ function Navbar() {
         <a href="/" className="flex items-center gap-0 font-lobster">
           <img src={logo} alt="UXpert" className="h-16 w-16" />{" "}
           <span className="text-2xl font-bold text-[#F24E1E] tracking-wider">
-            UX<span className="text-[#1D1D1D] font-montserrat">pert</span>
+            LOGO<span className="text-[#1D1D1D] font-montserrat"></span>
           </span>
         </a>
       </div>
@@ -32,22 +32,22 @@ function Navbar() {
           <a href="/solicitar-acceso">SOLICITAR ACCESO</a>
         </li>
         <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
-          <a href="#work">WORK</a>
+          <a href="#work">APLICATIVO</a>
         </li>
         <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
-          <a href="#pricing">PRICING</a>
+          <a href="#pricing">PRECIOS</a>
         </li>
         <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
-          <a href="#faq">FAQ&apos;s</a>
+          <a href="#faq">PQR&apos;s</a>
         </li>
       </ul>
 
-      <button
-        type="button"
-        className="h-11 px-6 text-white text-nowrap font-bold tracking-wider bg-[#F86642] rounded-lg flex items-center hover:bg-[#F6F6F6] hover:text-[#F86642] duration-150 border-2 border-[#E0EAF3] hover:border-[#F86642] active:scale-95 transition-all max-[950px]:hidden"
-      >
-        GET STARTED
-      </button>
+      <a
+  href="/solicitar-acceso"
+  className="h-11 px-6 text-white text-nowrap font-bold tracking-wider bg-[#F86642] rounded-lg flex items-center hover:bg-[#F6F6F6] hover:text-[#F86642] duration-150 border-2 border-[#E0EAF3] hover:border-[#F86642] active:scale-95 transition-all max-[950px]:hidden"
+>
+  COMIENZA YA!
+</a>
 
       {/* Mobile Nav Humburger Icon */}
       <button

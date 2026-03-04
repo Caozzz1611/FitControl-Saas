@@ -54,7 +54,7 @@ function PlanCard({
             isFeatured ? "text-[#000000]" : "text-[#FF734F]"
           }`}
         >
-          PER MONTH
+          POR MES
         </p>
       </div>
 
@@ -64,7 +64,7 @@ function PlanCard({
         } max-[450px]:min-h-[240px] max-[450px]:h-auto max-[450px]:my-4`}
       >
         <h4 className="text-base font-bold uppercase px-6 mb-1">
-          WHAT&apos;S INCLUDED:
+          Qué Incluye:
         </h4>
         {feature.map((data) => (
           <p key={data} className="text-base font-medium px-10 py-1">
@@ -78,7 +78,7 @@ function PlanCard({
           isFeatured ? "text-white" : ""
         } max-[450px]:h-auto max-[450px]:my-4`}
       >
-        <h4 className="text-base font-bold uppercase px-6 mb-1">Design Team</h4>
+        <h4 className="text-base font-bold uppercase px-6 mb-1">Posee</h4>
         {designFeatures.map((data) => (
           <p key={data} className="text-base font-medium px-10 py-1">
             {data}.
@@ -92,7 +92,7 @@ function PlanCard({
           isFeatured ? "border-white text-white" : ""
         } max-[450px]:w-full max-[450px]:my-4`}
       >
-        TRY FREE{" "}
+        Solicitalo{" "}
         <img
           src={isFeatured ? pointingArrowWhite : pointingArrowBlack}
           alt="Right Side Arrow"

@@ -1,50 +1,49 @@
 export const plansDetails = [
-  {
-    planName: "Essential",
-    planDescription: "Great for basic UI/UX design needs",
-    planPrice: 2600,
-    feature: [
-      "UI Execution",
-      "Connect on Slack",
-      "One 30 minute meeting a week",
-    ],
-    designFeatures: [
-      "1 designer working with 4-5 other customers at the same time",
-    ],
-    isFeatured: false,
-  },
-  {
-    planName: "Pro",
-    planDescription: "Great for end-to-end product design",
-    planPrice: 3500,
-    feature: [
-      "Everything in Essential",
-      "Full UI/UX design and research",
-      "Dev ready Figma files",
-      "One 1 hour meeting a week",
-    ],
-    designFeatures: [
-      "1 design lead",
-      "1 designer working on 2-3 other customers at the same time",
-    ],
-    isFeatured: true,
-  },
-  {
-    planName: "Turbo",
-    planDescription:
-      "Great for products that require more design horsepower and tight timelines",
-    planPrice: 5200,
-    feature: [
-      "Everything in Essential and Pro",
-      "User Testing",
-      "Figma Prototypes",
-      "Flexible meetings",
-      "Custom workflows to speed up delivery",
-    ],
-    designFeatures: [
-      "1 design lead",
-      "1 designer working on 1 other customer at the same time",
-    ],
-    isFeatured: false,
-  },
+ {
+  planName: "Básico",
+  planDescription: "Ideal para clubes pequeños que están comenzando",
+  planPrice: 49900,
+  feature: [
+    "Gestión de jugadores",
+    "Registro de entrenamientos",
+    "Control básico de pagos",
+  ],
+  designFeatures: [
+    "Hasta 2 equipos",
+    "Soporte por correo electrónico",
+  ],
+  isFeatured: false,
+},
+{
+  planName: "Profesional",
+  planDescription: "Perfecto para clubes en crecimiento",
+  planPrice: 89900,
+  feature: [
+    "Todo lo del plan Básico",
+    "Gestión completa de pagos",
+    "Reportes financieros",
+    "Múltiples equipos y categorías",
+  ],
+  designFeatures: [
+    "Hasta 10 equipos",
+    "Soporte prioritario",
+  ],
+  isFeatured: true,
+},
+{
+  planName: "Elite",
+  planDescription: "Para clubes grandes que necesitan control total",
+  planPrice: 149900,
+  feature: [
+    "Todo lo del plan Profesional",
+    "Reportes avanzados",
+    "Acceso para múltiples administradores",
+    "Soporte personalizado",
+  ],
+  designFeatures: [
+    "Equipos ilimitados",
+    "Soporte dedicado",
+  ],
+  isFeatured: false,
+},
 ];

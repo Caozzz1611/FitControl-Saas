@@ -8,11 +8,10 @@ function Testimonials() {
   return (
     <div className="bg-[#292526] flex justify-center" id="work">
       <div className="pt-20 pb-12 px-6 w-full max-w-[1440px] flex flex-col items-center gap-14  max-[900px]:gap-10">
-        <h3 className="max-w-[1000px] capitalize font-bold text-4xl text-white text-center  max-[768px]:text-3xl">
-          How <span className="text-[#FF734F]">accessible</span> UX design is
-          changing the <span className="text-[#FF734F]">businesses</span> for
-          the better
-        </h3>
+       <h3 className="max-w-[1000px] capitalize font-bold text-4xl text-white text-center max-[768px]:text-3xl">
+        Cómo <span className="text-[#FF734F]">FitControl</span> está modernizando la
+        gestión de los <span className="text-[#FF734F]">clubes deportivos</span>
+      </h3>
 
         <div className="max-w-[1100px] px-16 flex flex-col gap-10  max-[900px]:px-0">
           <img

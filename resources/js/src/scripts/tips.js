@@ -1,26 +1,26 @@
 export const faqTips = [
   {
-    tip: "You want a new, innovative, and user-centered UX strategy for an existing product.",
-    active: false,
-  },
-  {
-    tip: "You want to understand where users struggle when using your product.",
+    tip: "Si necesitas organizar jugadores, entrenadores y equipos en un solo lugar.",
     active: true,
   },
   {
-    tip: "You want to translate complex data into an easy-to-understand dashboard.",
+    tip: "Si quieres automatizar el control de pagos y reducir errores administrativos.",
     active: false,
   },
   {
-    tip: "You‘re researching how UX can impact you business growth.",
+    tip: "Si deseas programar entrenamientos y torneos de manera sencilla.",
     active: false,
   },
   {
-    tip: "You need additional design resources that synergize with your (already) amazing design team.",
+    tip: "Si buscas mejorar la gestión y el crecimiento de tu club deportivo.",
     active: false,
   },
   {
-    tip: "You want to understand your users and design products that meet their needs.",
-    active: false,
-  },
+  tip: "Si quieres llevar el control de asistencia y rendimiento de tus jugadores.",
+  active: false,
+},
+{
+  tip: "Si necesitas acceder a la información de tu club desde cualquier dispositivo y en tiempo real.",
+  active: false,
+},
 ];
