@@ -17,10 +17,9 @@
         <p>Ya puedes iniciar sesión en tu plataforma.</p>
 
         <div style="margin:20px 0;">
-            <a href="{{ url('/admin') }}"
-               style="background:#16a34a; color:white; padding:12px 20px; text-decoration:none; border-radius:5px;">
-                Iniciar Sesión
-            </a>
+           <a href="{{ $url }}">
+    Completar registro como Administrador
+</a>
         </div>
 
         <p style="font-size:12px; color:gray;">

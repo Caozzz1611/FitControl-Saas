@@ -34,6 +34,8 @@ class Tenant extends Model
 
         // Responsable
         'encargado_nombre',
+
+        'register_token',
     ];
 
     protected $casts = [

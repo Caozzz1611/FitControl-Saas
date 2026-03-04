@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TenantRequestController;
 
+use App\Http\Controllers\AdminRegisterController;
+
+Route::get('/register-admin/{token}', [AdminRegisterController::class, 'show'])
+    ->name('register.admin');
+
+Route::post('/register-admin/{token}', [AdminRegisterController::class, 'store']);
+
 Route::get('/solicitar-acceso', [TenantRequestController::class, 'create'])->name('tenant.request');
 Route::post('/solicitar-acceso', [TenantRequestController::class, 'store'])->name('tenant.request.store');
 

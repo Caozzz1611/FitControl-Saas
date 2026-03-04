@@ -13,6 +13,7 @@ use Filament\Actions\Action;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TenantApprovedMail;
 use App\Mail\TenantRejectedMail;
+use Illuminate\Support\Str;
 
 class TenantRequests extends Page implements HasTable
 {
@@ -26,7 +27,7 @@ class TenantRequests extends Page implements HasTable
 
     public static function canAccess(): bool
     {
-        return true;
+        return auth()->user()->hasRole('super_admin');
     }
 
     public function table(Table $table): Table
@@ -54,13 +55,17 @@ class TenantRequests extends Page implements HasTable
                     ->color('success')
                     ->requiresConfirmation()
                     ->action(function (Tenant $record) {
-                        $record->update([
-                            'estado' => 'activo',
-                        ]);
 
-                        Mail::to($record->email_corporativo)
-                            ->send(new TenantApprovedMail($record));
-                    }),
+                            $token = Str::uuid();
+
+                            $record->update([
+                                'estado' => 'activo',
+                                'register_token' => $token,
+                            ]); 
+
+                            Mail::to($record->email_corporativo)
+                                ->send(new TenantApprovedMail($record));
+                        }),
 
                 Action::make('reject')
                     ->label('Rechazar')

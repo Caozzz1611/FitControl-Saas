@@ -18,9 +18,13 @@ class TenantApprovedMail extends Mailable
         $this->tenant = $tenant;
     }
 
-    public function build()
-    {
-        return $this->subject('Tu solicitud fue aprobada 🎉')
-            ->view('emails.tenant-approved');
-    }
+   public function build()
+{
+    $url = url('/register-admin/' . $this->tenant->register_token);
+
+    return $this->subject('Tu solicitud fue aprobada 🎉')
+        ->view('emails.tenant-approved', [
+            'url' => $url,
+        ]);
+}
 }
