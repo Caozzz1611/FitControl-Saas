@@ -50,7 +50,15 @@ function Navbar() {
         </li>
       </ul>
         <a
+<<<<<<< HEAD
         href="/admin/login"
+=======
+<<<<<<< HEAD
+        href="/solicitar-acceso"
+=======
+        href="/admin/login"
+>>>>>>> 2ba1979 (ApexChart añadido a las widgets y mejora del control de tenant en varias tabla ( Entrenamiento))
+>>>>>>> fb3e8d7 ( ApexChart añadido a las widgets y mejora del control de tenant en varias tabla ( Entrenamiento))
         className="h-11 px-6 text-black font-bold tracking-wider b rounded-lg flex items-center hover:bg-[#ffff] duration-150 border-2 border-[#121c4c] active:scale-95 transition-all max-[950px]:hidden"
       >
         <img src={candado} width={"30px"} alt="" />
