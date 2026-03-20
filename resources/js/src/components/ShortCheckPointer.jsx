@@ -1,11 +1,10 @@
 import React from "react";
-import orangeTick from "../assets/orange-tick.png";
 
 function ShortCheckPointer({ text }) {
   return (
     <div className="flex items-center gap-2">
-      <img src={orangeTick} alt="Orange Tick Mark" />
-      <span className="font-bold text-black">{text}</span>
+      <span className="text-[#121c4c] text-xl">✔</span>
+      <span className="font-bold text-[#12092a]">{text}</span>
     </div>
   );
 }

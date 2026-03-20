@@ -1,58 +1,42 @@
 import React from "react";
 
-// Buttons
-function PlansDurationSelectorButton({
-  duration,
-  currentPlanDuration,
-  handleCurrentPlanDurationUpdate,
-  className,
-  text,
-}) {
+function PlansDurationSelector({ currentPlanDuration, handleCurrentPlanDurationUpdate }) {
   return (
-    <button
-      type="button"
-      className={`text-black font-bold tracking-wide uppercase h-[44.5px] px-4 py-2 relative ${className} ${
-        currentPlanDuration === duration ? "text-white bg-black" : ""
-      } max-[410px]:text-sm max-[410px]:px-2 max-[410px]:py-1`}
-      onClick={() => handleCurrentPlanDurationUpdate(duration)}
-    >
-      {duration.toUpperCase()}{" "}
-      <span className="absolute top-[-28px] left-[20%] text-sm text-[#FF734F] text-nowrap max-[410px]:text-xs">
-        {text}
-      </span>
-    </button>
-  );
-}
+    <div className="flex gap-3 bg-gray-100 p-2 rounded-xl">
 
-// Container for Buttons
-function PlansDurationSelector({
-  currentPlanDuration,
-  handleCurrentPlanDurationUpdate,
-}) {
-  return (
-    <div className="py-20 pb-10 w-full flex justify-center items-center">
-      <div className="h-[46px] border border-[#FF734F] rounded-[9px] max-[410px]:text-nowrap">
-        <PlansDurationSelectorButton
-          duration="monthly"
-          currentPlanDuration={currentPlanDuration}
-          handleCurrentPlanDurationUpdate={handleCurrentPlanDurationUpdate}
-          className="border border-[#FF734F] rounded-l-lg"
-        />
-        <PlansDurationSelectorButton
-          duration="quarterly"
-          currentPlanDuration={currentPlanDuration}
-          handleCurrentPlanDurationUpdate={handleCurrentPlanDurationUpdate}
-          className="border border-[#FF734F]"
-          text="AHORRA 10%"
-        />
-        <PlansDurationSelectorButton
-          duration="yearly"
-          currentPlanDuration={currentPlanDuration}
-          handleCurrentPlanDurationUpdate={handleCurrentPlanDurationUpdate}
-          className="border border-[#FF734F] rounded-r-lg"
-          text="AHORRA 15%"
-        />
-      </div>
+      <button
+        onClick={() => handleCurrentPlanDurationUpdate("monthly")}
+        className={`px-5 py-2 rounded-lg font-semibold transition ${
+          currentPlanDuration === "monthly"
+            ? "bg-[#121c4c] text-white shadow"
+            : "text-[#121c4c] hover:bg-gray-200"
+        }`}
+      >
+        Mensual
+      </button>
+
+      <button
+        onClick={() => handleCurrentPlanDurationUpdate("quarterly")}
+        className={`px-5 py-2 rounded-lg font-semibold transition ${
+          currentPlanDuration === "quarterly"
+            ? "bg-[#121c4c] text-white shadow"
+            : "text-[#121c4c] hover:bg-gray-200"
+        }`}
+      >
+        Trimestral
+      </button>
+
+      <button
+        onClick={() => handleCurrentPlanDurationUpdate("yearly")}
+        className={`px-5 py-2 rounded-lg font-semibold transition ${
+          currentPlanDuration === "yearly"
+            ? "bg-[#121c4c] text-white shadow"
+            : "text-[#121c4c] hover:bg-gray-200"
+        }`}
+      >
+        Anual
+      </button>
+
     </div>
   );
 }

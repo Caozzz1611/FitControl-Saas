@@ -8,7 +8,7 @@ function Questions() {
       <div className="w-full max-w-[1440px] px-6 flex flex-col items-center justify-center gap-16">
         
         <h3 className="mt-12 text-4xl font-bold capitalize text-center max-[768px]:text-3xl max-[768px]:mt-7">
-          Preguntas <span className="text-[#FF734F]">frecuentes</span> sobre
+          Preguntas <span className="text-[#485179]">frecuentes</span> sobre
           FitControl
         </h3>
 

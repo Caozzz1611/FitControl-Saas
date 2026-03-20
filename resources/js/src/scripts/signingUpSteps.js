@@ -1,6 +1,6 @@
-import signingUpStep1 from "../assets/signingUpStep1.svg";
-import signingUpStep2 from "../assets/signingUpStep2.svg";
-import signingUpStep3 from "../assets/signingUpStep3.svg";
+import signingUpStep1 from "../assets/ilu2.svg";
+import signingUpStep2 from "../assets/uli3.svg";
+import signingUpStep3 from "../assets/ilu4.svg";
 
 export const signingUpSteps = [
   {

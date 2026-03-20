@@ -16,7 +16,7 @@ class Equipo extends Model
         'logo_equipo',
         'ubi_equipo',
         'contacto_equipo',
-        'categoria_equipo',
+        'categoria',
     ];
 
     // Scope global para filtrar por tenant

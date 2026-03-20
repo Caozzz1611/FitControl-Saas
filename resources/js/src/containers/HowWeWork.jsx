@@ -6,13 +6,13 @@ function HowWeWork() {
   return (
     <div className="flex justify-center" id="operations">
       <div className="py-10 px-6 pb-20 max-w-[1440px] flex flex-col justify-center items-center gap-10 max-[768px]:gap-8">
-        
-        <h2 className="text-black font-bold text-4xl capitalize text-center max-w-[1000px] max-[768px]:text-3xl">
-          Cómo <span className="text-[#FF734F] capitalize">empezar</span> con{" "}
-          <span className="text-[#FF734F] capitalize">FitControl</span>
+
+        <h2 className="text-[#12092a] font-bold text-4xl capitalize text-center max-w-[1000px] max-[768px]:text-3xl">
+          Cómo <span className="text-[#121c4c] capitalize">empezar</span> con{" "}
+          <span className="text-[#121c4c] capitalize">FitControl</span>
         </h2>
 
-        <p className="text-black text-center max-w-[1000px]">
+        <p className="text-[#12092a] text-center max-w-[1000px]">
           Imagina tu club completamente organizado: jugadores registrados,
           entrenamientos programados y pagos controlados en un solo lugar.
           FitControl simplifica la gestión deportiva con una plataforma

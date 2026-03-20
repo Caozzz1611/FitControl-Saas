@@ -11,7 +11,7 @@ return new class extends Migration {
 
             $table->foreignId('tenant_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-
+             $table->string('gravedad');
             $table->string('tipo_lesion');
             $table->text('descripcion')->nullable();
             $table->date('fecha_inicio');

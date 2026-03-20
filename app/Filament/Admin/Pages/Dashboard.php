@@ -36,16 +36,15 @@ class Dashboard extends BaseDashboard
     public function getWidgets(): array
     {
         return [
-            AccountWidget::class,
-
             TotalUsuarios::class,
             TotalEquipos::class,
-            PagosDelMes::class,
-            PagosPorMes::class,
+            TorneosActivos::class,
             AsistenciaPorMes::class,
             EntrenamientosPorMes::class,
-            TorneosActivos::class,
-            JugadoresNoAptos::class,
+/*             PagosPorMes::class,
+ */            JugadoresNoAptos::class,
+            PagosDelMes::class,
+
 
         ];
     }

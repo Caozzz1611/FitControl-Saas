@@ -2,27 +2,38 @@
 
 namespace App\Filament\Widgets;
 
-use Filament\Widgets\StatsOverviewWidget;
-use Filament\Widgets\StatsOverviewWidget\Stat;
 use App\Models\HistorialMedico;
-use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
+use Leandrocfe\FilamentApexCharts\Widgets\ApexChartWidget;
 
-class JugadoresNoAptos extends StatsOverviewWidget
+class JugadoresNoAptos extends ApexChartWidget
 {
-    use HasWidgetShield;
-    
-    protected function getStats(): array
+    protected static ?string $heading = 'Estado de jugadores';
+
+        protected int | string | array $columnSpan = 2;
+
+ 
+    protected function getOptions(): array
     {
         $noAptos = HistorialMedico::where('apto', false)
             ->distinct('user_id')
             ->count('user_id');
 
+        $aptos = HistorialMedico::where('apto', true)
+            ->distinct('user_id')
+            ->count('user_id');
+
         return [
-            Stat::make('Jugadores no aptos', $noAptos)
-                ->description('Lesiones o restricciones médicas')
-                ->icon('heroicon-o-heart'),
+            'chart' => [
+                'type' => 'donut',
+            ],
+            'colors' => [
+                 '#F8A712',
+                '#FF3F07',
+                '#FECE45',
+            ],
+
+            'series' => [$aptos, $noAptos],
+            'labels' => ['Aptos', 'No aptos'],
         ];
     }
-
-    protected int | string | array $columnSpan = 2;
 }

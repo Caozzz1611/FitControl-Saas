@@ -1,6 +1,6 @@
-import operatinStep1 from "../assets/operatingStep1.svg";
-import operatinStep2 from "../assets/operatingStep2.svg";
-import operatinStep3 from "../assets/operatingStep3.svg";
+import operatinStep1 from "../assets/dinero.svg";
+import operatinStep2 from "../assets/escalable.svg";
+import operatinStep3 from "../assets/rapido.svg";
 
 export const operatingSteps = [
   {

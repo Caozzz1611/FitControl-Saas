@@ -29,6 +29,7 @@ class PagosPorMes extends ChartWidget
                 [
                     'label' => 'Total de pagos',
                     'data' => $pagos->pluck('total'),
+                    'color'=> '#FF3F07'
                 ],
             ],
             'labels' => $pagos->pluck('mes')->map(fn ($mes) => match ($mes) {

@@ -26,7 +26,7 @@ class HistorialMedicosTable
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\BadgeColumn::make('tipo')
+                Tables\Columns\BadgeColumn::make('tipo_lesion')
                     ->label('Tipo')
                     ->colors([
                         'danger' => 'lesion',

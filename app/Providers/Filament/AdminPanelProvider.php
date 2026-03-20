@@ -27,6 +27,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use App\Filament\Widgets\TotalUsuarios;
 use App\Models\Entrenamiento;
 use App\Filament\Pages\Calendario;
+use Leandrocfe\FilamentApexCharts\FilamentApexChartsPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -38,6 +39,9 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->brandName('FitControl')
             ->login()
+            ->plugins([
+            FilamentApexChartsPlugin::make()
+                ])
             ->colors([
                 'primary' => Color::Blue,
             ])

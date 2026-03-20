@@ -2,61 +2,74 @@
 
 namespace App\Filament\Widgets;
 
-use Filament\Widgets\ChartWidget;
 use App\Models\AsistenciaEntrenamiento;
 use Illuminate\Support\Facades\DB;
+use Leandrocfe\FilamentApexCharts\Widgets\ApexChartWidget;
 use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 
-class AsistenciaPorMes extends ChartWidget
+class AsistenciaPorMes extends ApexChartWidget
 {
     use HasWidgetShield;
-    protected ?string $heading = 'Asistencia a entrenamientos';
 
-    protected int | string | array $columnSpan = '2';
+    protected static ?string $chartId = 'asistenciaPorMes';
+    protected static ?string $heading = 'Asistencia a entrenamientos';
 
-   /*  public static function canView(): bool
+    protected int | string | array $columnSpan = 'full';
+
+    protected function getOptions(): array
     {
-        return auth()->user()->can('View: AsistenciaPorMes');
-    } */
-
-    protected function getData(): array
-    {
-        $data = AsistenciaEntrenamiento::select(
-                DB::raw('MONTH(created_at) as mes'),
-                DB::raw('SUM(CASE WHEN presente = 1 THEN 1 ELSE 0 END) as presentes'),
-                DB::raw('SUM(CASE WHEN presente = 0 THEN 1 ELSE 0 END) as ausentes')
-            )
+        $data = AsistenciaEntrenamiento::selectRaw('
+                MONTH(created_at) as mes,
+                SUM(CASE WHEN presente = 1 THEN 1 ELSE 0 END) as presentes,
+                SUM(CASE WHEN presente = 0 THEN 1 ELSE 0 END) as ausentes
+            ')
             ->groupBy('mes')
-            ->orderBy('mes')
-            ->get();
+            ->get()
+            ->keyBy('mes');
 
-        return [
-            'datasets' => [
-                [
-                    'label' => 'Presentes',
-                    'data' => $data->pluck('presentes'),
-                ],
-                [
-                    'label' => 'Ausentes',
-                    'data' => $data->pluck('ausentes'),
-                ],
-            ],
-            'labels' => $data->pluck('mes')->map(fn ($mes) => $this->nombreMes($mes)),
-        ];
-    }
-
-    protected function getType(): string
-    {
-        return 'bar';
-    }
-
-    private function nombreMes(int $mes): string
-    {
-        return [
+        $meses = [
             1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo',
             4 => 'Abril', 5 => 'Mayo', 6 => 'Junio',
             7 => 'Julio', 8 => 'Agosto', 9 => 'Septiembre',
             10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre',
-        ][$mes] ?? '';
+        ];
+
+        $presentes = [];
+        $ausentes = [];
+        $labels = [];
+
+        foreach ($meses as $num => $nombre) {
+            $labels[] = $nombre;
+
+            $presentes[] = (int) ($data[$num]->presentes ?? 0);
+            $ausentes[]  = (int) ($data[$num]->ausentes ?? 0);
+        }
+
+        return [
+            'chart' => [
+                'type' => 'bar',
+                'height' => 300,
+            ],
+            'series' => [
+                [
+                    'name' => 'Presentes',
+                    'data' => $presentes,
+                ],
+                [
+                    'name' => 'Ausentes',
+                    'data' => $ausentes,
+                ],
+            ],
+            'xaxis' => [
+                'categories' => $labels,
+            ],
+            'colors' => ['#F8A712', '#FF3F07'],
+            'plotOptions' => [
+                'bar' => [
+                    'horizontal' => false,
+                    'columnWidth' => '50%',
+                ],
+            ],
+        ];
     }
 }

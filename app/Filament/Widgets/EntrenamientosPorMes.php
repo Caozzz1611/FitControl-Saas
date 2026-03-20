@@ -2,44 +2,52 @@
 
 namespace App\Filament\Widgets;
 
-use Filament\Widgets\ChartWidget;
 use App\Models\Entrenamiento;
 use Illuminate\Support\Facades\DB;
+use Leandrocfe\FilamentApexCharts\Widgets\ApexChartWidget;
 use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 
-class EntrenamientosPorMes extends ChartWidget
+class EntrenamientosPorMes extends ApexChartWidget
 {
     use HasWidgetShield;
 
-    protected ?string $heading = 'Entrenamientos por mes';
+    protected static ?string $chartId = 'entrenamientosPorMes';
+    protected static ?string $heading = 'Entrenamientos por mes';
 
     protected int | string | array $columnSpan = 2;
 
- 
-    protected function getData(): array
+    protected function getOptions(): array
     {
-        $data = Entrenamiento::select(
-                DB::raw("DATE_FORMAT(fecha, '%Y-%m') as periodo"),
-                DB::raw('COUNT(*) as total')
-            )
+        $data = Entrenamiento::selectRaw("
+                DATE_FORMAT(fecha, '%Y-%m') as periodo,
+                COUNT(*) as total
+            ")
             ->groupBy('periodo')
             ->orderBy('periodo')
             ->get();
 
+        $labels = $data->pluck('periodo')->map(fn ($p) => $this->formatearPeriodo($p))->toArray();
+        $series = $data->pluck('total')->map(fn ($v) => (int) $v)->toArray();
+
         return [
-            'datasets' => [
+            'chart' => [
+                'type' => 'line',
+                'height' => 300,
+            ],
+            'series' => [
                 [
-                    'label' => 'Entrenamientos',
-                    'data' => $data->pluck('total'),
+                    'name' => 'Entrenamientos',
+                    'data' => $series,
                 ],
             ],
-            'labels' => $data->pluck('periodo')->map(fn ($p) => $this->formatearPeriodo($p)),
+            'xaxis' => [
+                'categories' => $labels,
+            ],
+            'stroke' => [
+                'curve' => 'smooth', 
+            ],
+            'colors' => ['#F8A712'],
         ];
-    }
-
-    protected function getType(): string
-    {
-        return 'line';
     }
 
     private function formatearPeriodo(string $periodo): string

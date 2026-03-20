@@ -27,7 +27,7 @@ class HistorialMedicoForm
                             ->searchable()
                             ->required(),
 
-                        Select::make('tipo')
+                        Select::make('tipo_lesion')
                             ->label('Tipo')
                             ->options([
                                 'lesion' => 'Lesión',

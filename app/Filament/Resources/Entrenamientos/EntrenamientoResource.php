@@ -14,6 +14,8 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
+use Illuminate\Database\Eloquent\Builder;
+use Filament\Facades\Filament;
 
 class EntrenamientoResource extends Resource
 {
@@ -26,11 +28,33 @@ class EntrenamientoResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'nombre';
 
+   /**
+     * Multi-tenant: super-admin ve todo, usuarios normales solo su tenant
+     */
+    public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery()->withoutGlobalScopes();
+
+        $user = Filament::auth()->user();
+
+        if ($user && $user->hasRole('super_admin')) {
+            return $query;
+        }
+
+        if ($user && $user->tenant_id) {
+            return $query->where('tenant_id', $user->tenant_id);
+        }
+
+        return $query;
+    }
+
+    // FORMULARIO
     public static function form(Schema $schema): Schema
     {
         return EntrenamientoForm::configure($schema);
     }
 
+    // TABLA
     public static function table(Table $table): Table
     {
         return EntrenamientosTable::configure($table);
@@ -38,9 +62,7 @@ class EntrenamientoResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

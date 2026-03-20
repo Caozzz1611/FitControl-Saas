@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logosf.png";
 import "../assets/hamburgers.css";
+import nuevouser  from "../assets/nuevouser.svg";
+import candado from "../assets/candado.svg";
 
 function Navbar() {
   const [isNavActive, setIsNavActive] = useState(false);
@@ -15,41 +17,56 @@ function Navbar() {
       className="h-[80px] flex justify-between items-center gap-6"
       role="navigation"
     >
+      {/* Logo */}
       <div className="h-16 cursor-pointer">
-        <a href="/" className="flex items-center gap-0 font-lobster">
-          <img src={logo} alt="UXpert" className="h-16 w-16" />{" "}
-          <span className="text-2xl font-bold text-[#F24E1E] tracking-wider">
-            LOGO<span className="text-[#1D1D1D] font-montserrat"></span>
+        <a href="/" className="flex items-center gap-2">
+          <img src={logo} alt="FitControl" className="h-35 w-35" />
+          <span className="text-2xl font-bold text-[#121c4c] tracking-wider">
+
           </span>
         </a>
       </div>
 
-      <ul className="flex items-center gap-[36px] text-black font-bold tracking-wide max-[950px]:hidden">
-        <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
-          <a href="/admin/login">INICIAR SESION </a>
+      {/* Desktop Menu */}
+      <ul className="flex items-center gap-[36px] text-[#12092a] font-bold tracking-wide max-[950px]:hidden">
+        <li className="hover:text-[#485179] transition-colors duration-300">
+          <a href="/admin/login">INICIAR SESIÓN</a>
         </li>
-        <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
+
+        <li className="hover:text-[#485179] transition-colors duration-300">
           <a href="/solicitar-acceso">SOLICITAR ACCESO</a>
         </li>
-        <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
+
+        <li className="hover:text-[#485179] transition-colors duration-300">
           <a href="#work">APLICATIVO</a>
         </li>
-        <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
+
+        <li className="hover:text-[#485179] transition-colors duration-300">
           <a href="#pricing">PRECIOS</a>
         </li>
-        <li className="hover:text-[#FF734F] hover:cursor-pointer transition-colors duration-300 text-nowrap">
-          <a href="#faq">PQR&apos;s</a>
+
+        <li className="hover:text-[#485179] transition-colors duration-300">
+          <a href="#faq">PQR's</a>
         </li>
       </ul>
+        <a
+        href="/admin/login"
+        className="h-11 px-6 text-black font-bold tracking-wider b rounded-lg flex items-center hover:bg-[#ffff] duration-150 border-2 border-[#121c4c] active:scale-95 transition-all max-[950px]:hidden"
+      >
+        <img src={candado} width={"30px"} alt="" />
+        INICIA SESION
+      </a>
 
+      {/* CTA Button */}
       <a
-  href="/solicitar-acceso"
-  className="h-11 px-6 text-white text-nowrap font-bold tracking-wider bg-[#F86642] rounded-lg flex items-center hover:bg-[#F6F6F6] hover:text-[#F86642] duration-150 border-2 border-[#E0EAF3] hover:border-[#F86642] active:scale-95 transition-all max-[950px]:hidden"
->
-  COMIENZA YA!
-</a>
+        href="/solicitar-acceso"
+        className="h-11 px-6 text-white font-bold tracking-wider bg-[#121c4c] rounded-lg flex items-center hover:bg-[#485179] duration-150 border-2 border-[#121c4c] active:scale-95 transition-all max-[950px]:hidden"
+      >
+        <img src={nuevouser} width={"30px"} alt="" />
+        CREAR CUENTA
+      </a>
 
-      {/* Mobile Nav Humburger Icon */}
+      {/* Hamburger */}
       <button
         type="button"
         className={`hamburger hamburger--emphatic ${isNavActive ? "is-active" : ""
@@ -61,24 +78,43 @@ function Navbar() {
         </span>
       </button>
 
-      {/* Mobile Nav */}
+      {/* Mobile Menu */}
       {isNavActive && (
-        <div className="min-h-[100%] w-full bg-[#E0EAF3] absolute top-[80px] left-0 min-[950px]:hidden">
-          <ul className="flex flex-col items-center gap-8 text-2xl font-bold text-[#1D1D1D] tracking-wider mt-16 pb-20">
-            <li className="hover:text-[#FF734F]" onClick={handleNavButtonClick}>
-              <a href="#operations">HOW IT WORKS</a>
+        <div className="min-h-[100%] w-full bg-[#d3cae0] absolute top-[80px] left-0 min-[950px]:hidden">
+          <ul className="flex flex-col items-center gap-8 text-2xl font-bold text-[#12092a] tracking-wider mt-16 pb-20">
+            <li
+              className="hover:text-[#121c4c]"
+              onClick={handleNavButtonClick}
+            >
+              <a href="/admin/login">INICIAR SESIÓN</a>
             </li>
-            <li className="hover:text-[#FF734F]" onClick={handleNavButtonClick}>
-              <a href="#about">ABOUT</a>
+
+            <li
+              className="hover:text-[#121c4c]"
+              onClick={handleNavButtonClick}
+            >
+              <a href="/solicitar-acceso">SOLICITAR ACCESO</a>
             </li>
-            <li className="hover:text-[#FF734F]" onClick={handleNavButtonClick}>
-              <a href="#work">WORK</a>
+
+            <li
+              className="hover:text-[#121c4c]"
+              onClick={handleNavButtonClick}
+            >
+              <a href="#work">APLICATIVO</a>
             </li>
-            <li className="hover:text-[#FF734F]" onClick={handleNavButtonClick}>
-              <a href="#pricing">PRICING</a>
+
+            <li
+              className="hover:text-[#121c4c]"
+              onClick={handleNavButtonClick}
+            >
+              <a href="#pricing">PRECIOS</a>
             </li>
-            <li className="hover:text-[#FF734F]" onClick={handleNavButtonClick}>
-              <a href="#faq">FAQ&apos;s</a>
+
+            <li
+              className="hover:text-[#121c4c]"
+              onClick={handleNavButtonClick}
+            >
+              <a href="#faq">PQR's</a>
             </li>
           </ul>
         </div>
