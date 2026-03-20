@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logosf.png";
 import "../assets/hamburgers.css";
-import nuevouser  from "../assets/nuevouser.svg";
+import nuevouser from "../assets/nuevouser.svg";
 import candado from "../assets/candado.svg";
 
 function Navbar() {
@@ -13,17 +13,12 @@ function Navbar() {
   };
 
   return (
-    <div
-      className="h-[80px] flex justify-between items-center gap-6"
-      role="navigation"
-    >
+    <div className="h-[80px] flex justify-between items-center gap-6" role="navigation">
       {/* Logo */}
       <div className="h-16 cursor-pointer">
         <a href="/" className="flex items-center gap-2">
           <img src={logo} alt="FitControl" className="h-35 w-35" />
-          <span className="text-2xl font-bold text-[#121c4c] tracking-wider">
-
-          </span>
+          <span className="text-2xl font-bold text-[#121c4c] tracking-wider"></span>
         </a>
       </div>
 
@@ -32,40 +27,29 @@ function Navbar() {
         <li className="hover:text-[#485179] transition-colors duration-300">
           <a href="/admin/login">INICIAR SESIÓN</a>
         </li>
-
         <li className="hover:text-[#485179] transition-colors duration-300">
           <a href="/solicitar-acceso">SOLICITAR ACCESO</a>
         </li>
-
         <li className="hover:text-[#485179] transition-colors duration-300">
           <a href="#work">APLICATIVO</a>
         </li>
-
         <li className="hover:text-[#485179] transition-colors duration-300">
           <a href="#pricing">PRECIOS</a>
         </li>
-
         <li className="hover:text-[#485179] transition-colors duration-300">
           <a href="#faq">PQR's</a>
         </li>
       </ul>
-        <a
-<<<<<<< HEAD
+
+      {/* CTA Buttons */}
+      <a
         href="/admin/login"
-=======
-<<<<<<< HEAD
-        href="/solicitar-acceso"
-=======
-        href="/admin/login"
->>>>>>> 2ba1979 (ApexChart añadido a las widgets y mejora del control de tenant en varias tabla ( Entrenamiento))
->>>>>>> fb3e8d7 ( ApexChart añadido a las widgets y mejora del control de tenant en varias tabla ( Entrenamiento))
-        className="h-11 px-6 text-black font-bold tracking-wider b rounded-lg flex items-center hover:bg-[#ffff] duration-150 border-2 border-[#121c4c] active:scale-95 transition-all max-[950px]:hidden"
+        className="h-11 px-6 text-black font-bold tracking-wider rounded-lg flex items-center hover:bg-[#ffff] duration-150 border-2 border-[#121c4c] active:scale-95 transition-all max-[950px]:hidden"
       >
         <img src={candado} width={"30px"} alt="" />
-        INICIA SESION
+        INICIA SESIÓN
       </a>
 
-      {/* CTA Button */}
       <a
         href="/solicitar-acceso"
         className="h-11 px-6 text-white font-bold tracking-wider bg-[#121c4c] rounded-lg flex items-center hover:bg-[#485179] duration-150 border-2 border-[#121c4c] active:scale-95 transition-all max-[950px]:hidden"
@@ -77,8 +61,7 @@ function Navbar() {
       {/* Hamburger */}
       <button
         type="button"
-        className={`hamburger hamburger--emphatic ${isNavActive ? "is-active" : ""
-          } min-[950px]:hidden`}
+        className={`hamburger hamburger--emphatic ${isNavActive ? "is-active" : ""} min-[950px]:hidden`}
         onClick={handleNavButtonClick}
       >
         <span className="hamburger-box">
@@ -90,38 +73,19 @@ function Navbar() {
       {isNavActive && (
         <div className="min-h-[100%] w-full bg-[#d3cae0] absolute top-[80px] left-0 min-[950px]:hidden">
           <ul className="flex flex-col items-center gap-8 text-2xl font-bold text-[#12092a] tracking-wider mt-16 pb-20">
-            <li
-              className="hover:text-[#121c4c]"
-              onClick={handleNavButtonClick}
-            >
+            <li className="hover:text-[#121c4c]" onClick={handleNavButtonClick}>
               <a href="/admin/login">INICIAR SESIÓN</a>
             </li>
-
-            <li
-              className="hover:text-[#121c4c]"
-              onClick={handleNavButtonClick}
-            >
+            <li className="hover:text-[#121c4c]" onClick={handleNavButtonClick}>
               <a href="/solicitar-acceso">SOLICITAR ACCESO</a>
             </li>
-
-            <li
-              className="hover:text-[#121c4c]"
-              onClick={handleNavButtonClick}
-            >
+            <li className="hover:text-[#121c4c]" onClick={handleNavButtonClick}>
               <a href="#work">APLICATIVO</a>
             </li>
-
-            <li
-              className="hover:text-[#121c4c]"
-              onClick={handleNavButtonClick}
-            >
+            <li className="hover:text-[#121c4c]" onClick={handleNavButtonClick}>
               <a href="#pricing">PRECIOS</a>
             </li>
-
-            <li
-              className="hover:text-[#121c4c]"
-              onClick={handleNavButtonClick}
-            >
+            <li className="hover:text-[#121c4c]" onClick={handleNavButtonClick}>
               <a href="#faq">PQR's</a>
             </li>
           </ul>
