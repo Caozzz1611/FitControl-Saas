@@ -10,6 +10,7 @@
         "alperenersoy/filament-export": "^4.0",
         "bezhansalleh/filament-shield": "^4.0",
         "filament/filament": "^4.0",
+        "guzzlehttp/guzzle": "^7.10",
         "inertiajs/inertia-laravel": "^2.0",
         "kitloong/laravel-migrations-generator": "^7.2",
         "laravel/fortify": "^1.30",
