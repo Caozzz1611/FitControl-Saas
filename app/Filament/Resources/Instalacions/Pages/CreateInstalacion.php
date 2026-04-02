@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateInstalacion extends CreateRecord
 {
     protected static string $resource = InstalacionResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

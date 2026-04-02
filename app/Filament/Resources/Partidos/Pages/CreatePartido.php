@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreatePartido extends CreateRecord
 {
     protected static string $resource = PartidoResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

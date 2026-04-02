@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreatePago extends CreateRecord
 {
     protected static string $resource = PagoResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

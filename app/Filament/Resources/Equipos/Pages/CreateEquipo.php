@@ -15,5 +15,11 @@ protected function getCreateFormActionLabel(): string
 {
     return 'Crear';
 }
+
+protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+    
 }
 

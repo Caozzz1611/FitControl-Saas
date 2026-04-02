@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateEquipoUser extends CreateRecord
 {
     protected static string $resource = EquipoUserResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
