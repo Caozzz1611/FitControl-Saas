@@ -16,16 +16,16 @@ class AsistenciaPorMes extends ApexChartWidget
 
     protected int | string | array $columnSpan = 'full';
 
-    protected function getOptions(): array
-    {
-        $data = AsistenciaEntrenamiento::selectRaw('
-                MONTH(created_at) as mes,
-                SUM(CASE WHEN presente = 1 THEN 1 ELSE 0 END) as presentes,
-                SUM(CASE WHEN presente = 0 THEN 1 ELSE 0 END) as ausentes
-            ')
-            ->groupBy('mes')
-            ->get()
-            ->keyBy('mes');
+   protected function getOptions(): array
+{
+   $data = AsistenciaEntrenamiento::selectRaw('
+        EXTRACT(MONTH FROM created_at) as mes,
+        SUM(CASE WHEN presente = true THEN 1 ELSE 0 END) as presentes,
+        SUM(CASE WHEN presente = false THEN 1 ELSE 0 END) as ausentes
+    ')
+    ->groupBy('mes')
+    ->get()
+    ->keyBy('mes');
 
         $meses = [
             1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo',

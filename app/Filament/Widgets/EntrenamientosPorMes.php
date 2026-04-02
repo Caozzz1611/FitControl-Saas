@@ -19,12 +19,12 @@ class EntrenamientosPorMes extends ApexChartWidget
     protected function getOptions(): array
     {
         $data = Entrenamiento::selectRaw("
-                DATE_FORMAT(fecha, '%Y-%m') as periodo,
-                COUNT(*) as total
-            ")
-            ->groupBy('periodo')
-            ->orderBy('periodo')
-            ->get();
+        TO_CHAR(fecha, 'YYYY-MM') as periodo,
+        COUNT(*) as total
+    ")
+    ->groupBy('periodo')
+    ->orderBy('periodo')
+    ->get();
 
         $labels = $data->pluck('periodo')->map(fn ($p) => $this->formatearPeriodo($p))->toArray();
         $series = $data->pluck('total')->map(fn ($v) => (int) $v)->toArray();

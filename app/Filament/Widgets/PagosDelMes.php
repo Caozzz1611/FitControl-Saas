@@ -11,12 +11,14 @@ use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 class PagosDelMes extends StatsOverviewWidget
 {
     use HasWidgetShield;
-    
+
     protected int | string | array $columnSpan = 2;
 
     protected function getStats(): array
     {
-        $query = Pago::whereMonth('fecha', Carbon::now()->month);
+        $mes = Carbon::now()->month;
+
+        $query = Pago::whereRaw('EXTRACT(MONTH FROM fecha) = ?', [$mes]);
 
         if (!auth()->user()->hasRole('super_admin')) {
             $query->where('tenant_id', auth()->user()->tenant_id);

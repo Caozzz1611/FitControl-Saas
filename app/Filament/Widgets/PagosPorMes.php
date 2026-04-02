@@ -13,11 +13,11 @@ class PagosPorMes extends ChartWidget
 
     protected int | string | array $columnSpan = '2';
     protected ?string $heading = 'Pagos por mes';
-   
+
     protected function getData(): array
     {
         $pagos = Pago::select(
-                DB::raw('MONTH(created_at) as mes'),
+                DB::raw('EXTRACT(MONTH FROM created_at) as mes'),
                 DB::raw('SUM(monto) as total')
             )
             ->groupBy('mes')
@@ -29,10 +29,10 @@ class PagosPorMes extends ChartWidget
                 [
                     'label' => 'Total de pagos',
                     'data' => $pagos->pluck('total'),
-                    'color'=> '#FF3F07'
+                    'color' => '#FF3F07',
                 ],
             ],
-            'labels' => $pagos->pluck('mes')->map(fn ($mes) => match ($mes) {
+            'labels' => $pagos->pluck('mes')->map(fn ($mes) => match ((int) $mes) {
                 1 => 'Enero',
                 2 => 'Febrero',
                 3 => 'Marzo',

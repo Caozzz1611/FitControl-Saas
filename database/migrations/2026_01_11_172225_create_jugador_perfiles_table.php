@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+
 return new class extends Migration {
     public function up(): void
     {
@@ -15,7 +16,7 @@ return new class extends Migration {
             $table->integer('dorsal')->nullable();
             $table->decimal('altura', 5, 2)->nullable();
             $table->decimal('peso', 5, 2)->nullable();
-            $table->enum('pierna_habil', ['derecha','izquierda','ambas'])->nullable();
+            $table->string('pierna_habil')->nullable(); // PostgreSQL: enum → string (derecha, izquierda, ambas)
 
             $table->timestamps();
         });

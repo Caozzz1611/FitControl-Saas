@@ -9,7 +9,6 @@ import Tips from "../src/containers/Tips";
 import Questions from "../src/containers/Questions";
 import Invitation from "../src/containers/Invitation";
 import Footer from "../src/containers/Footer";
-import "../../css/App.css";
 
 export default function Landing() {
     return (
@@ -27,4 +26,3 @@ export default function Landing() {
         </React.Fragment>
     );
 }
-

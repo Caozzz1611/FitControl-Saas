@@ -9,30 +9,28 @@ class JugadoresNoAptos extends ApexChartWidget
 {
     protected static ?string $heading = 'Estado de jugadores';
 
-        protected int | string | array $columnSpan = 2;
+    protected int | string | array $columnSpan = 2;
 
- 
     protected function getOptions(): array
     {
-        $noAptos = HistorialMedico::where('apto', false)
-            ->distinct('user_id')
-            ->count('user_id');
+        $noAptos = HistorialMedico::whereRaw('"apto" = false')
+            ->selectRaw('COUNT(DISTINCT user_id) as total')
+            ->value('total');
 
-        $aptos = HistorialMedico::where('apto', true)
-            ->distinct('user_id')
-            ->count('user_id');
+        $aptos = HistorialMedico::whereRaw('"apto" = true')
+            ->selectRaw('COUNT(DISTINCT user_id) as total')
+            ->value('total');
 
         return [
             'chart' => [
                 'type' => 'donut',
             ],
             'colors' => [
-                 '#F8A712',
+                '#F8A712',
                 '#FF3F07',
                 '#FECE45',
             ],
-
-            'series' => [$aptos, $noAptos],
+            'series' => [(int) $aptos, (int) $noAptos],
             'labels' => ['Aptos', 'No aptos'],
         ];
     }

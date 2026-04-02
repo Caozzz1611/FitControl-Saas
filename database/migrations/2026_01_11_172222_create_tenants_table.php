@@ -1,4 +1,4 @@
- <?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,17 +11,17 @@ return new class extends Migration {
             $table->id();
 
             // Datos básicos SaaS
-            $table->string('nombre'); // Nombre oficial
+            $table->string('nombre');
             $table->string('subdominio')->nullable()->unique();
-            $table->enum('estado', ['activo','suspendido', 'pendiente'])->default('pendiente');
+            $table->string('estado')->default('pendiente'); // PostgreSQL: enum → string (activo, suspendido, pendiente)
 
             // Identidad legal
             $table->string('nombre_corto')->nullable();
             $table->string('nit')->unique();
-            $table->year('anio_fundacion')->nullable();
+            $table->smallInteger('anio_fundacion')->nullable(); // PostgreSQL: year() → smallInteger()
 
             // Información institucional
-            $table->enum('tipo_club', ['formativo', 'amateur', 'profesional']);
+            $table->string('tipo_club'); // PostgreSQL: enum → string (formativo, amateur, profesional)
             $table->json('colores_oficiales')->nullable();
             $table->string('escudo_url')->nullable();
 

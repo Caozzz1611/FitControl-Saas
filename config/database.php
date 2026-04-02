@@ -95,7 +95,13 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-            'sslmode' => env('DB_SSLMODE', 'prefer'),
+            'sslmode' => 'require',
+            'options' => extension_loaded('pdo_pgsql') ? [
+            PDO::ATTR_TIMEOUT => 5,
+                 ] : [],
+                 'options' => [
+    PDO::ATTR_EMULATE_PREPARES => true,
+],
         ],
 
         'sqlsrv' => [

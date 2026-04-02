@@ -25,7 +25,7 @@ function Navbar() {
       {/* Desktop Menu */}
       <ul className="flex items-center gap-[36px] text-[#12092a] font-bold tracking-wide max-[950px]:hidden">
         <li className="hover:text-[#485179] transition-colors duration-300">
-          <a href="/admin/login">INICIAR SESIÓN</a>
+          <a href="/onboarding">ACCEDE</a>
         </li>
         <li className="hover:text-[#485179] transition-colors duration-300">
           <a href="/solicitar-acceso">SOLICITAR ACCESO</a>

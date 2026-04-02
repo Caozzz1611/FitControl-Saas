@@ -40,3 +40,11 @@ require __DIR__.'/settings.php';
 
 
 
+#
+use App\Http\Controllers\OnboardingController;
+
+Route::get('/onboarding', [OnboardingController::class, 'index'])->name('onboarding.index');
+Route::post('/onboarding', [OnboardingController::class, 'store'])->name('onboarding.store');
+Route::get('/onboarding/success', [OnboardingController::class, 'success'])->name('onboarding.success');
+
+
