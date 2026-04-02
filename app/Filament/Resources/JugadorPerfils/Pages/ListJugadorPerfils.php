@@ -10,6 +10,19 @@ class ListJugadorPerfils extends ListRecords
 {
     protected static string $resource = JugadorPerfilResource::class;
 
+      public function getTitle(): string
+    {
+        return 'Perfil Jugador';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [
+            JugadorPerfilResource::getUrl('index') => 'Perfil de Jugador',
+            'Listado',
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [

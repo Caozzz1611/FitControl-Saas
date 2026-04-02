@@ -9,6 +9,9 @@ class CreateTenant extends CreateRecord
 {
     protected static string $resource = TenantResource::class;
 
+    protected static ?string $title = 'Crear Tenat';
+
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

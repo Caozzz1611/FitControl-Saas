@@ -10,6 +10,19 @@ class ListPartidos extends ListRecords
 {
     protected static string $resource = PartidoResource::class;
 
+      public function getTitle(): string
+    {
+        return 'Partidos';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [
+            PartidoResource::getUrl('index') => 'Partidos',
+            'Listado',
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [

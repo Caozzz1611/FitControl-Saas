@@ -10,6 +10,19 @@ class ListPagos extends ListRecords
 {
     protected static string $resource = PagoResource::class;
 
+      public function getTitle(): string
+    {
+        return 'Pagos';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [
+            PagoResource::getUrl('index') => 'Pagos',
+            'Listado',
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [

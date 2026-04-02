@@ -10,6 +10,19 @@ class ListTenants extends ListRecords
 {
     protected static string $resource = TenantResource::class;
 
+      public function getTitle(): string
+    {
+        return 'Tenant';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [
+            TenantResource::getUrl('index') => 'Tenants',
+            'Listado',
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [

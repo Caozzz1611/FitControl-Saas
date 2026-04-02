@@ -9,6 +9,9 @@ class CreateEntrenamiento extends CreateRecord
 {
     protected static string $resource = EntrenamientoResource::class;
 
+        protected static ?string $title = 'Crear Entrenamiento';
+
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

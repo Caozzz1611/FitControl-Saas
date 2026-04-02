@@ -10,6 +10,19 @@ class ListEquipos extends ListRecords
 {
     protected static string $resource = EquipoResource::class;
 
+      public function getTitle(): string
+    {
+        return 'Equipos';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [
+            EquipoResource::getUrl('index') => 'Equipo',
+            'Listado',
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [

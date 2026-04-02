@@ -10,6 +10,19 @@ class ListRendimientos extends ListRecords
 {
     protected static string $resource = RendimientoResource::class;
 
+      public function getTitle(): string
+    {
+        return 'Rendimiento';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [
+            RendimientoResource::getUrl('index') => 'Rendimientos',
+            'Listado',
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [

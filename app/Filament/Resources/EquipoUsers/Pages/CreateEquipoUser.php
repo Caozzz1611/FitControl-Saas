@@ -9,6 +9,9 @@ class CreateEquipoUser extends CreateRecord
 {
     protected static string $resource = EquipoUserResource::class;
 
+    protected static ?string $title = 'Asignar equipo';
+
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

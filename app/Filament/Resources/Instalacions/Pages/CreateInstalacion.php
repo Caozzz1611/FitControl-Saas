@@ -9,6 +9,9 @@ class CreateInstalacion extends CreateRecord
 {
     protected static string $resource = InstalacionResource::class;
 
+    protected static ?string $title = 'Crear Instalacion';
+
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

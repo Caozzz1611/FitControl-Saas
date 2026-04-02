@@ -9,6 +9,9 @@ class CreatePartido extends CreateRecord
 {
     protected static string $resource = PartidoResource::class;
 
+    protected static ?string $title = 'Crear Partido';
+
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

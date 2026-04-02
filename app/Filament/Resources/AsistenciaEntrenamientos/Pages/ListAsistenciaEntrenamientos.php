@@ -10,6 +10,19 @@ class ListAsistenciaEntrenamientos extends ListRecords
 {
     protected static string $resource = AsistenciaEntrenamientoResource::class;
 
+    public function getTitle(): string
+    {
+        return 'Asistencia Entrenamientos';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [
+            AsistenciaEntrenamientoResource::getUrl('index') => 'Asistencia Entrenamientos',
+            'Listado',
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [

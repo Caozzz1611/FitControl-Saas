@@ -9,6 +9,8 @@ class CreateJugadorPerfil extends CreateRecord
 {
     protected static string $resource = JugadorPerfilResource::class;
 
+    protected static ?string $title = 'Crear Perfil de Jugador';
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

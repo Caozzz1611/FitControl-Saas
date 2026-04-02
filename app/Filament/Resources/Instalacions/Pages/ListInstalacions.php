@@ -10,6 +10,19 @@ class ListInstalacions extends ListRecords
 {
     protected static string $resource = InstalacionResource::class;
 
+      public function getTitle(): string
+    {
+        return 'Instalaciones';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [
+            InstalacionResource::getUrl('index') => 'Instalaciones',
+            'Listado',
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [

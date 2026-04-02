@@ -9,6 +9,8 @@ class CreateHistorialMedico extends CreateRecord
 {
     protected static string $resource = HistorialMedicoResource::class;
 
+    protected static ?string $title = 'Crear Historial';
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

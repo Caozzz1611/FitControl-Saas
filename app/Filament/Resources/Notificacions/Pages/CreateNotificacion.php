@@ -8,6 +8,8 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateNotificacion extends CreateRecord
 {
     protected static string $resource = NotificacionResource::class;
+
+    protected static ?string $title = 'Crear Notificación';
     
     protected function getRedirectUrl(): string
     {

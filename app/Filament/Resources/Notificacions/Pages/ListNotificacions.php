@@ -10,6 +10,19 @@ class ListNotificacions extends ListRecords
 {
     protected static string $resource = NotificacionResource::class;
 
+      public function getTitle(): string
+    {
+        return 'Notificaciones';
+    }
+
+    public function getBreadcrumbs(): array
+    {
+        return [
+            NotificacionResource::getUrl('index') => 'Notificaciones',
+            'Listado',
+        ];
+    }
+
     protected function getHeaderActions(): array
     {
         return [
